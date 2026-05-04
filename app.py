@@ -13,8 +13,6 @@ import json
 import os
 import datetime
 import requests
-import spacy
-
 # Auto-load .env file
 try:
     from dotenv import load_dotenv
@@ -27,12 +25,8 @@ except ImportError:
 app = Flask(__name__)
 CORS(app)
 
-# Load spaCy model (run: python -m spacy download en_core_web_sm)
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    nlp = None
-    print("⚠️  spaCy model not found. Run: python -m spacy download en_core_web_sm")
+# spaCy removed — using fast regex NLP (works on all platforms including Render free tier)
+nlp = None
 
 # ── AI Provider Keys (set whichever you have in .env) ────────────────────────
 GROQ_API_KEY      = os.environ.get("GROQ_API_KEY", "")
