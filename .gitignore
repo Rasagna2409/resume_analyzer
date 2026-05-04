@@ -1,0 +1,41 @@
+# Environment & secrets — NEVER push API keys
+.env
+
+# Python virtual environment
+venv/
+env/
+.venv/
+
+# Database — contains user data
+*.db
+*.sqlite
+*.sqlite3
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# spaCy models (large files, downloaded via setup script)
+en_core_web_sm/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Logs
+*.log
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
